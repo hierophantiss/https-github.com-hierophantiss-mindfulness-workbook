@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg-page: #F7F5F0;
+  --color-text-main: #3A3834;
+  --color-accent-teal: #648880;
+}
+
+[data-theme='deep'] {
+  --color-bg-page: #1E1D19;
+  --color-text-main: #DEDCD6;
+  --color-accent-teal: #789993;
+}
+
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

@@ -50,8 +50,11 @@ const T = {
     // Downloads
     dlPdfName: 'Οδηγός Ενσυνειδητότητας (PDF)',
     dlPdfDesc: 'Πλήρης οδηγός σε μορφή PDF για ανάγνωση offline',
+    dlWidgetName: 'Widget Αρχικής Οθόνης',
+    dlWidgetDesc: 'Άμεση πρόσβαση στους 4 άξονες και αναπνοή',
     dlAppName: 'Εγκατάσταση Εφαρμογής',
     dlAppDesc: 'Πρόσβαση από την αρχική οθόνη · Λειτουργεί offline',
+    installNotSupported: 'Η εγκατάσταση δεν υποστηρίζεται σε αυτόν τον browser.',
 
     // Stats
     statSessions: 'Συνεδρίες', statMinutes: 'Λεπτά', statStreak: 'Ημ. Φροντίδας', statExplored: 'Ασκήσεις',
@@ -276,8 +279,11 @@ const T = {
 
     dlPdfName: 'Mindfulness Guide (PDF)',
     dlPdfDesc: 'Full guide in PDF format for offline reading',
+    dlWidgetName: 'Home Screen Widget',
+    dlWidgetDesc: 'Direct access to the 4 axes and breath',
     dlAppName: 'Install Application',
     dlAppDesc: 'Access from home screen · Works offline',
+    installNotSupported: 'Installation is not supported in this browser.',
 
     statSessions: 'Sessions', statMinutes: 'Minutes', statStreak: 'Care Days', statExplored: 'Exercises',
 

@@ -77,8 +77,8 @@ body.dark #companion-bubble { background: var(--bg-card); border-color: var(--bo
 body.dark .comp-close { background: rgba(255,255,255,0.06); }
 
 .comp-body { padding: 10px 16px 6px; }
-.comp-primary { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.5; margin-bottom: 4px; }
-.comp-secondary { font-size: 13px; color: var(--text-soft); line-height: 1.6; }
+.comp-primary { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: #2b2a28; line-height: 1.5; margin-bottom: 4px; }
+.comp-secondary { font-size: 13px; color: #5b5a56; line-height: 1.6; }
 
 .comp-actions { display: flex; gap: 8px; padding: 8px 16px; flex-wrap: wrap; }
 .comp-action {

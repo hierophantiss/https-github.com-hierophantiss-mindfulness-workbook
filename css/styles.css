@@ -9,33 +9,28 @@
 
 /* ═══ VARIABLES ═══ */
 :root {
-  --bg:         #000000; /* Pure black for maximum contrast/comfort */
-  --bg-card:    #0D0D0E;
-  --bg-dark:    #000000;
-  --sidebar-bg: #080809;
-  --teal:       #C5A059;
-  --teal-light: #D4B475;
-  --teal-pale:  #0A0A0B;
-  --sage:       #7A9E7E;
-  --terra: #C07050;
-  --gold: #C5A059;
-  --lav: #B5A7D0;
-  --text: #E5E5E7;
-  --text-soft: #A0A0A5;
-  --text-hint: #5E5E62;
-  --border: #1A1A1C;
-  --nav-h:      62px;
-  --top-h:      56px;
-  --max-w:      1024px;
-  --radius:     0px; /* Sophisticated theme uses sharp corners or very subtle ones */
-  --radius-sm:  0px;
+  --bg:         #E8E6D9; /* Open olive based tone for light mode */
+  --bg-card:    #DCDAD0;
+  --text:       #3A3834;
+  --text-soft:  #6B6964;
+  --text-hint:  #9D9B95;
+  --teal:       #5E7F78;
+  --border:     #D4D2C9;
+  --sidebar-bg: #E0DED1;
+  --teal-light: #809B95;
 }
 
-/* ═══ DARK MODE (Now default) ═══ */
+/* ═══ DEEP MODE (via class='dark') ═══ */
 body.dark {
-  --bg: #000000; --bg-card: #0D0D0E;
-  --text: #E5E5E7; --text-soft: #A0A0A5;
-  --text-hint: #5E5E62; --border: #1A1A1C;
+  --bg:         #1E1D19;
+  --bg-card:    #2A2824;
+  --text:       #DEDCD6;
+  --text-soft:  #A7A5A0;
+  --text-hint:  #75736E;
+  --teal:       #789993;
+  --border:     #3A3834;
+  --sidebar-bg: #272521;
+  --teal-light: #94B0AB;
 }
 body.dark .top-bar { background: var(--sidebar-bg); }
 body.dark .bottom-nav { background: var(--sidebar-bg); border-top-color: var(--border); box-shadow: none; }

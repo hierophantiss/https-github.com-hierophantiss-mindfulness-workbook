@@ -1,6 +1,39 @@
 /* ═══ js/app.js ═══ */
 var microCat = '';
 var microIdx = 0;
+function installApp() {
+  if (window.deferredPrompt) {
+    window.deferredPrompt.prompt();
+    window.deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      }
+      window.deferredPrompt = null;
+    });
+  } else {
+    alert(t('installNotSupported') || 'Η εγκατάσταση δεν υποστηρίζεται σε αυτόν τον browser.');
+  }
+}
+
+// Listen for PWA install prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  window.deferredPrompt = e;
+});
+
+// ═══ THEME ═══
+function toggleDark() {
+  const body = document.body;
+  const isDark = body.classList.contains('dark');
+  if (isDark) {
+    body.classList.remove('dark');
+    document.getElementById('dark-toggle').textContent = '🌙';
+  } else {
+    body.classList.add('dark');
+    document.getElementById('dark-toggle').textContent = '☀️';
+  }
+}
+
 function showScreen(id) {
   tapFeedback();
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -38,6 +71,7 @@ function showScreen(id) {
   if (id === 'micro') buildMicroScreen();
   if (id === 'about') buildAboutScreen();
   if (id === 'downloads') buildDownloadsScreen();
+  if (id === 'widget') buildWidgetScreen();
 
   // Scroll to top
   var scrollArea = screen ? screen.querySelector('.scroll-area') : null;

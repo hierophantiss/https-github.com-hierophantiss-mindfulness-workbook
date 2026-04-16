@@ -10,7 +10,9 @@ const CORE_ASSETS = [
   '/favicon.ico',
   '/favicon-32x32.png',
   '/favicon-192x192.png',
-  '/apple-touch-icon.png'
+  '/apple-touch-icon.png',
+  '/widget.html',
+  '/widget-manifest.json'
 ];
 
 const EXERCISE_PAGES = [
