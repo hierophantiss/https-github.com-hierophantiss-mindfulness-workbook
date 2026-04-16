@@ -1,4 +1,6 @@
 /* ═══ js/app.js ═══ */
+var microCat = '';
+var microIdx = 0;
 function showScreen(id) {
   tapFeedback();
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
