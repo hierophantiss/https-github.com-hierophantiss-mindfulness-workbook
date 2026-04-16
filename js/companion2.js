@@ -157,12 +157,13 @@ function c2RunStep(stepId) {
         window.c2RenderDynamicGreeting(step, lang);
     } else if (step.type === 'smart_hub') {
         window.c2RenderSmartHub(step, lang);
+    } else if (step.type === 'depth_select') {
+        window.c2RenderDepthSelect(step, lang);
     } else {
         window.c2RenderGenericSelect(step, lang);
     }
 }
 
-// 6. Renderers (Εμφάνιση περιεχομένου)
 function c2RenderSmartHub(step, lang) {
     var d = window.companionData;
     var activeScreen = "";
@@ -197,8 +198,8 @@ function c2RenderSmartHub(step, lang) {
 
     // CONTEXT A: Χρήστης διαβάζει κεφάλαιο
     if (activeScreen === 'screen-chapter' || activeScreen === 'screen-chapters') {
-        html += `<button class="c2-option-btn" onclick="window.c2RunStep('pick_concept')">🔍 ${lang === 'el' ? 'Τι σημαίνουν οι όροι εδώ;' : 'What do these terms mean?'}</button>`;
-        html += `<button class="c2-option-btn" onclick="window.c2RunStep('show_faq')">❓ ${lang === 'el' ? 'Απορίες για αυτό το κεφάλαιο' : 'Questions about this chapter'}</button>`;
+        html += `<button class="c2-option-btn" onclick="window.c2StartFlow('conceptExplore')">🔍 ${lang === 'el' ? 'Τι σημαίνουν οι όροι εδώ;' : 'What do these terms mean?'}</button>`;
+        html += `<button class="c2-option-btn" onclick="window.c2StartFlow('chapterExplore')">❓ ${lang === 'el' ? 'Απορίες για αυτό το κεφάλαιο' : 'Questions about this chapter'}</button>`;
     } 
     // CONTEXT B: Χρήστης είναι στην αρχική ή αλλού
     else {
@@ -221,6 +222,31 @@ function c2RenderSmartHub(step, lang) {
     html += '</div>';
     c2SetContent(html);
 }
+
+function c2SaveAndRun(key, value, nextStep) {
+    var d = window.companionData;
+    d[key] = value;
+    saveCompanionData(d);
+    window.c2RunStep(nextStep);
+}
+
+function c2RenderDepthSelect(step, lang) {
+    var title = step.text ? step.text[lang] : "...";
+    var html = `<div class="c2-back-row"><button class="c2-back" onclick="window.c2ShowMainMenu()">←</button><span class="c2-back-title">${title}</span></div>`;
+    html += '<div class="c2-options">';
+    
+    if (step.options) {
+        step.options.forEach(function(opt) {
+            var label = opt.label[lang] || opt.label;
+            // Save depth and run next
+            var action = `window.c2SaveAndRun('${step.saves}', ${opt.depth}, '${step.next}')`;
+            html += `<button class="c2-option-btn" onclick="${action}">${label}</button>`;
+        });
+    }
+    html += '</div>';
+    c2SetContent(html);
+}
+
 
 function c2RenderDynamicGreeting(step, lang) {
     var d = window.companionData;
@@ -482,6 +508,8 @@ window.c2RenderConceptCard = c2RenderConceptCard;
 window.c2RenderDynamicGreeting = c2RenderDynamicGreeting;
 window.c2RenderSmartHub = c2RenderSmartHub;
 window.c2RenderGenericSelect = c2RenderGenericSelect;
+window.c2RenderDepthSelect = c2RenderDepthSelect;
+window.c2SaveAndRun = c2SaveAndRun;
 window.c2LinkConcepts = c2LinkConcepts;
 
 // 7. Context Hints & Reminders

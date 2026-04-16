@@ -365,7 +365,7 @@ var CONVERSATION_FLOWS = {
       {
         id: 'pick_depth',
         text: { el: 'Πόσο βαθιά θέλεις να πας;', en: 'How deep do you want to go?' },
-        type: 'select',
+        type: 'depth_select',
         options: [
           { label: { el: '🟢 Βασικά — δώσε μου τα κλειδιά', en: '🟢 Basics — give me the keys' }, depth: 1 },
           { label: { el: '🟡 Εξηγήσεις — θέλω να καταλάβω', en: '🟡 Explanations — I want to understand' }, depth: 2 },
