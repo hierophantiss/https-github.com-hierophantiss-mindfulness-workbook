@@ -168,6 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!localStorage.getItem('welcomed')) {
     showWelcome();
   }
+
+  // Initialize Companion 2.0
+  if (typeof window.c2Init === 'function') {
+    window.c2Init();
+  }
 });
 
 // ═══ WELCOME SCREEN ═══
