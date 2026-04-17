@@ -11,14 +11,15 @@
 :root {
   --bg:         #E8E6D9; /* Open olive based tone for light mode */
   --bg-card:    #DCDAD0;
-  --text:       #3A3834;
-  --text-soft:  #6B6964;
-  --text-hint:  #9D9B95;
-  --teal:       #5E7F78;
-  --border:     #D4D2C9;
-  --sidebar-bg: #E0DED1;
-  --teal-light: #809B95;
+  --text:       #201F1C; /* Darker for better contrast */
+  --text-soft:  #4A4844; /* Darker for better contrast */
+  --text-hint:  #85837D; /* Darker for better contrast */
+  --teal:       #3A5E57; /* Darker teal for better contrast */
+  --border:     #C4C2B9; /* Darker border */
+  --sidebar-bg: #D6D4C8;
+  --teal-light: #60857D; /* Adjusted for contrast */
   --nav-h:      60px;
+  --top-h:      50px;
 }
 
 /* ═══ DEEP MODE (via class='dark') ═══ */
@@ -68,7 +69,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: var(--text); background: var(--bg);
   min-height: 100vh; min-height: 100dvh;
-  overflow: hidden; -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ═══ ACCESSIBILITY ═══ */
